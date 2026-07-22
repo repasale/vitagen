@@ -1,0 +1,23 @@
+"SOC":
+  - "SIEM/IDS/IPS"
+  - "Social Engineering"
+  - "Wireshark"
+
+"Development":
+  - "C#"
+  - "C++"
+  - "Python"
+  - "TypeScript"
+  - "Java"
+  - "Bash"
+  - "Angular / NestJS"
+
+"Offensive Security":
+  - "Burp Suite"
+  - "OWASP Testing Guide"
+  - "Nmap"
+  - "Kali Linux"
+
+"Systems":
+  - "Windows"
+  - "Linux"

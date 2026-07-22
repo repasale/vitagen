@@ -1,0 +1,26 @@
+- school:
+    en: "Example Institute of Technology"
+    cz: "Příkladová technologická univerzita"
+  faculty:
+    en: "Faculty of Computing"
+    cz: "Fakulta informatiky"
+  program:
+    en: "Computer Science"
+    cz: "Informatika"
+  degree:
+    en: "Bachelor of Science (BSc)"
+    cz: "Bakalář (Bc.)"
+  from: "2014"
+  to: "2018"
+
+- school:
+    en: "Example Institute of Technology"
+    cz: "Příkladová technologická univerzita"
+  program:
+    en: "Software Engineering"
+    cz: "Softwarové inženýrství"
+  degree:
+    en: "Master of Science (MSc)"
+    cz: "Inženýr (Ing.)"
+  from: "2018"
+  to: "2020"

@@ -2,8 +2,8 @@
 output/*
 !output/.gitkeep
 
-# Private CV data (keep local only)
-user-cv/
+# Local backup of private CV data (never commit)
+user-cv-backup/
 
 # Python build artifacts
 __pycache__/

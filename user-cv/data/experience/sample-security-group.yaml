@@ -1,0 +1,17 @@
+employer: "Sample Security Group"
+job_title:
+  en: "Security Analyst"
+  cz: "Bezpečnostní analytik"
+location: "Remote"
+from: "January 2022"
+to: "March 2024"
+keywords:
+  - cybersecurity
+  - pentesting
+context:
+  en:
+    - "Performed web application penetration tests for external clients."
+    - "Triaged vulnerability reports and verified remediation."
+  cz:
+    - "Prováděl jsem penetrační testy webových aplikací pro externí klienty."
+achievements: []
