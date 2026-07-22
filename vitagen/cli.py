@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import argparse
 import sys
+from importlib.metadata import PackageNotFoundError, version
 from pathlib import Path
 
-from vitagen import __version__
 from vitagen.i18n import list_languages, load_locale_config, normalize_lang
 from vitagen.loader import collect_keywords, create_job_template, load_project
 from vitagen.model import build_cv_context
@@ -14,6 +14,11 @@ from vitagen.naming import build_pdf_filename
 from vitagen.paths import default_output_dir, resolve_input_dir, templates_dir
 from vitagen.renderer import get_renderer
 from vitagen.validator import format_report, validate_project
+
+try:
+    __version__ = version("vitagen")
+except PackageNotFoundError:
+    from vitagen import __version__  # type: ignore[attr-defined,no-redef]
 
 
 PREVIEW_COMMANDS = """

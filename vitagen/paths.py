@@ -23,14 +23,38 @@ def vitagen_home() -> Path:
 
 
 def resolve_input_dir(input_arg: str | None) -> Path:
-    """Return the user CV project root (contains data/ or user-cv/data/)."""
-    base = Path(input_arg or os.getcwd()).resolve()
-    if (base / "user-cv" / "data").is_dir():
-        return base / "user-cv"
-    if (base / "data").is_dir():
-        return base
+    """Return the user CV project root (contains data/ or user-cv/data/).
+
+    Resolution order:
+    1. Explicit ``--input`` directory
+    2. Current working directory
+    3. Vitagen install directory (repo root when installed editable)
+    """
+    candidates: list[Path] = []
+
+    if input_arg:
+        candidates.append(Path(input_arg).resolve())
+    else:
+        candidates.append(Path.cwd().resolve())
+        home = vitagen_home()
+        if home not in candidates:
+            candidates.append(home)
+
+    checked: list[Path] = []
+    for base in candidates:
+        if base in checked:
+            continue
+        checked.append(base)
+        if (base / "user-cv" / "data").is_dir():
+            return base / "user-cv"
+        if (base / "data").is_dir():
+            return base
+
+    searched = ", ".join(str(p) for p in checked)
     raise FileNotFoundError(
-        f"No CV data found in {base}. Expected 'data/' or 'user-cv/data/'."
+        f"No CV data found. Looked in: {searched}. "
+        "Expected a 'data/' or 'user-cv/data/' directory. "
+        "Use --input=DIR to point at your CV project, or run --help / --preview."
     )
 
 
