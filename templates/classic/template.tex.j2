@@ -12,7 +12,7 @@
 
 \newcommand{\cvsep}{|}
 
-\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{12pt}{6pt}
 
 \setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
@@ -75,11 +75,12 @@
 
 {% if cv.skills %}
 \section{ {{ cv.labels.skills | latex_escape }} }
-\begin{description}
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l @{\enspace\cvsep\enspace} X@{}}
 {% for group in cv.skills %}
-  \item[{{ group.category | latex_escape }}] {{ group['items'] | map('latex_escape') | join(', ') }}
+  {{ group.category | latex_escape }} & {{ group['items'] | map('latex_escape') | join(', ') }} \\
 {% endfor %}
-\end{description}
+\end{tabularx}
 {% endif %}
 
 {% if cv.certificates %}
