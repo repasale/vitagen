@@ -1,0 +1,17 @@
+# Optional project-specific language definitions.
+# Copy to locale.yaml to register additional output languages.
+#
+# languages:
+#   pt:
+#     name: Portuguese
+#     aliases: [portuguese, pt]
+#     babel: portuguese
+#     filename_code: PT
+#     show_title_in_name: false
+#     labels:
+#       experience: Experiência
+#       education: Educação
+#       skills: Competências
+#       languages: Idiomas
+#       certificates: Certificações
+#       present: Presente

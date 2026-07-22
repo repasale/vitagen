@@ -1,0 +1,29 @@
+employer: "Sample Security Group"
+job_title:
+  en: "Security Analyst"
+  es: "Analista de Seguridad"
+  fr: "Analyste Sécurité"
+  de: "Sicherheitsanalyst"
+  cz: "Bezpečnostní analytik"
+location: "Remote"
+from: "January 2022"
+to: "March 2024"
+keywords:
+  - cybersecurity
+  - pentesting
+context:
+  en:
+    - "Performed web application penetration tests for external clients."
+    - "Triaged vulnerability reports and verified remediation."
+  cz:
+    - "Prováděl jsem penetrační testy webových aplikací pro externí klienty."
+achievements:
+  - text:
+      en: "Delivered weekly OWASP-based assessments using Burp Suite."
+    keywords:
+      - pentesting
+      - cybersecurity
+  - text:
+      en: "Documented findings and presented results to client stakeholders."
+    keywords:
+      - cybersecurity

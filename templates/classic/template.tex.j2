@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[czech,english,spanish,french,ngerman]{babel}
+\usepackage[margin=1.8cm]{geometry}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{tabularx}
+
+\newcommand{\cvsep}{|}
+
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{12pt}{6pt}
+
+\setlist[itemize]{noitemsep, topsep=2pt, leftmargin=1.5em}
+\setlist[description]{style=sameline, leftmargin=2.2cm, labelwidth=2cm, font=\bfseries, nosep, topsep=3pt}
+\hypersetup{colorlinks=true, urlcolor=blue, linkcolor=black}
+
+\selectlanguage{ {{- cv.babel_language -}} }
+
+\begin{document}
+
+\begin{center}
+  {\LARGE\bfseries {{ cv.personal.display_name | latex_escape }} }\\[6pt]
+  {% set contact = [] %}
+  {% if cv.personal.city %}{% set _ = contact.append(cv.personal.city | latex_escape) %}{% endif %}
+  {% if cv.personal.email %}{% set _ = contact.append('\\href{mailto:' ~ cv.personal.email ~ '}{' ~ (cv.personal.email | latex_escape) ~ '}') %}{% endif %}
+  {% if cv.personal.telephone %}{% set _ = contact.append(cv.personal.telephone | latex_escape) %}{% endif %}
+  {% if cv.personal.linkedin %}{% set _ = contact.append('\\href{' ~ cv.personal.linkedin ~ '}{LinkedIn}') %}{% endif %}
+  {% if cv.personal.github %}{% set _ = contact.append('\\href{' ~ cv.personal.github ~ '}{GitHub}') %}{% endif %}
+  {% if cv.personal.web %}{% set _ = contact.append('\\href{' ~ cv.personal.web ~ '}{Web}') %}{% endif %}
+  {{ contact | join(' \cvsep\ ') | safe }}
+\end{center}
+
+\vspace{6pt}
+
+{% if cv.education %}
+\section{ {{ cv.labels.education | latex_escape }} }
+{% for edu in cv.education %}
+{% if not loop.first %}\par\vspace{8pt}{% endif %}
+\noindent\textbf{ {{ edu.school | latex_escape }} }{% if edu.from or edu.to %} \hfill {{ edu.from | latex_escape }}{% if edu.to %} -- {{ edu.to | latex_escape }}{% endif %}{% endif %}\\[2pt]
+{% if edu.faculty %}{{ edu.faculty | latex_escape }}\\{% endif %}
+{% if edu.program %}{{ edu.program | latex_escape }}{% if edu.specialization %} — {{ edu.specialization | latex_escape }}{% endif %}\\{% endif %}
+{% if edu.degree %}\textit{ {{ edu.degree | latex_escape }} }\\{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if cv.experience %}
+\section{ {{ cv.labels.experience | latex_escape }} }
+{% for job in cv.experience %}
+{% if not loop.first %}\par\vspace{4pt}{% endif %}
+\textbf{ {{ job.job_title | latex_escape }} } \hfill {{ job.from | latex_escape }} -- {{ job.to | latex_escape }}\\
+\textit{ {{ job.employer | latex_escape }} }{% if job.location %} \enspace\cvsep\enspace {{ job.location | latex_escape }}{% endif %}
+
+{% if job.context %}
+\begin{itemize}
+  {% for item in job.context %}
+  \item {{ item | latex_escape }}
+  {% endfor %}
+\end{itemize}
+{% endif %}
+
+{% if job.achievements %}
+\begin{itemize}
+  {% for item in job.achievements %}
+  \item {{ item | latex_escape }}
+  {% endfor %}
+\end{itemize}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% if cv.skills %}
+\section{ {{ cv.labels.skills | latex_escape }} }
+\begin{description}
+{% for group in cv.skills %}
+  \item[{{ group.category | latex_escape }}] {{ group['items'] | map('latex_escape') | join(', ') }}
+{% endfor %}
+\end{description}
+{% endif %}
+
+{% if cv.certificates %}
+\section{ {{ cv.labels.certificates | latex_escape }} }
+\begin{itemize}
+  {% for cert in cv.certificates %}
+  \item \textbf{ {{ cert.name | latex_escape }} }{% if cert.issuer %} — {{ cert.issuer | latex_escape }}{% endif %}{% if cert.year %} ({{ cert.year | latex_escape }}){% endif %}
+  {% endfor %}
+\end{itemize}
+{% endif %}
+
+\end{document}

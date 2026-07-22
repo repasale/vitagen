@@ -1,0 +1,32 @@
+employer: "Demo Consulting Inc."
+job_title:
+  en: "Application Security Consultant"
+  es: "Consultor de Seguridad de Aplicaciones"
+  fr: "Consultant en Sécurité Applicative"
+  de: "Application-Security-Berater"
+  cz: "Konzultant aplikační bezpečnosti"
+location: "Vancouver, Canada"
+from: "April 2024"
+to: "Present"
+keywords:
+  - appsec
+  - pentesting
+  - automation
+context:
+  en:
+    - "Lead web and API penetration testing engagements."
+    - "Onboard applications into continuous DAST scanning."
+  es:
+    - "Lidero evaluaciones de pruebas de penetración web y API."
+  cz:
+    - "Vedu penetrační testování webových aplikací a API."
+achievements:
+  - text:
+      en: "Completed full client assessments within one-week delivery windows."
+    keywords:
+      - pentesting
+      - appsec
+  - text:
+      en: "Automated reporting workflows with Python scripts."
+    keywords:
+      - automation

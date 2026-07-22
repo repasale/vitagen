@@ -1,0 +1,14 @@
+"Development":
+  - "Python"
+  - "TypeScript"
+  - "Docker"
+
+"Security":
+  - "Penetration testing"
+  - "OWASP Testing Guide"
+  - "Burp Suite"
+
+"Tools":
+  - "Git"
+  - "Linux"
+  - "CI/CD"

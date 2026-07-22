@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vitagen"
+version = "1.0.0"
+description = "Extensible LaTeX CV generator with multi-language and keyword filtering"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "Jinja2>=3.1",
+]
+
+[project.scripts]
+vitagen = "vitagen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["vitagen*"]
+
+[tool.setuptools.package-data]
+"vitagen" = ["languages.yaml"]

@@ -1,0 +1,22 @@
+# Generated PDFs (never commit)
+output/*
+!output/.gitkeep
+
+# Python build artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+
+# LaTeX temp files
+*.aux
+*.log
+*.out
+
+# OS / editor
+.DS_Store
+Thumbs.db

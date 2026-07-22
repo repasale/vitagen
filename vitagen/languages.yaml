@@ -1,0 +1,89 @@
+# Users can extend this file from their CV project: user-cv/data/locale.yaml
+
+default: en
+fallback: en
+
+languages:
+  en:
+    name: English
+    aliases: [english, en, eng]
+    babel: english
+    filename_code: EN
+    show_title_in_name: false
+    labels:
+      experience: Experience
+      education: Education
+      skills: Skills
+      languages: Languages
+      certificates: Certificates
+      present: Present
+
+  es:
+    name: Spanish
+    aliases: [spanish, es, esp]
+    babel: spanish
+    filename_code: ES
+    show_title_in_name: false
+    labels:
+      experience: Experiencia
+      education: Educación
+      skills: Habilidades
+      languages: Idiomas
+      certificates: Certificaciones
+      present: Presente
+
+  fr:
+    name: French
+    aliases: [french, fr, fra]
+    babel: french
+    filename_code: FR
+    show_title_in_name: false
+    labels:
+      experience: Expérience
+      education: Formation
+      skills: Compétences
+      languages: Langues
+      certificates: Certifications
+      present: Présent
+
+  de:
+    name: German
+    aliases: [german, de, deu, deutsch]
+    babel: ngerman
+    filename_code: DE
+    show_title_in_name: false
+    labels:
+      experience: Berufserfahrung
+      education: Ausbildung
+      skills: Fähigkeiten
+      languages: Sprachen
+      certificates: Zertifikate
+      present: heute
+
+  zh:
+    name: Chinese
+    aliases: [chinese, zh, cn, mandarin]
+    babel: english
+    filename_code: ZH
+    show_title_in_name: false
+    labels:
+      experience: 工作经历
+      education: 教育背景
+      skills: 技能
+      languages: 语言
+      certificates: 证书
+      present: 至今
+
+  cz:
+    name: Czech
+    aliases: [czech, cz, cs, cesky, česky]
+    babel: czech
+    filename_code: CZ
+    show_title_in_name: true
+    labels:
+      experience: Pracovní zkušenosti
+      education: Vzdělání
+      skills: Dovednosti
+      languages: Jazyky
+      certificates: Certifikace
+      present: současnost

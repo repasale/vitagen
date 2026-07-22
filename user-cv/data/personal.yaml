@@ -1,0 +1,16 @@
+# Sample personal data for demonstration. Replace with your own information.
+title:
+  en: ""
+  es: ""
+  fr: ""
+  de: ""
+  cz: "Ing."
+name: "John"
+middle_name: ""
+surname: "Shepard"
+city: "Vancouver, Canada"
+email: "john.shepard@example.com"
+telephone: "+1 555 010 000"
+linkedin: "https://linkedin.com/in/example"
+github: "https://github.com/example"
+web: "https://example.com"
